@@ -88,7 +88,7 @@ def Parse_boundary(lines):
         """
         horizontal_line_boundary = '\+(-*)\+'
         horizontal_boundary = re.findall(horizontal_line_boundary, line)
-        print(horizontal_boundary)
+        # print(horizontal_boundary)
 
     def parse_vertical_boundary(line):
         """
@@ -96,14 +96,14 @@ def Parse_boundary(lines):
         """
         vertical_line_boundary = '\|(.*)\|'
         vertical_boundary = re.findall(vertical_line_boundary, line)
-        print(vertical_boundary)
+        # print(vertical_boundary)
 
     for line in lines:
         parse_vertical_boundary(line)
         parse_horizontal_boundary(line)
 
 Parse_boundary = Parse_boundary(lines)
-print(Parse_boundary)
+# print(Parse_boundary)
 
 
 # TODO: Logic
@@ -124,4 +124,5 @@ def extract_rooms(lines):
         line.split('|')
         line.split(' ')
         line.split('\+')
+
         pass
