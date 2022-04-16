@@ -12,7 +12,6 @@ lines = open_file(file='floorplan01.txt')
 
 
 # // for every line that has () in the line, we will get the string between ()
-
 def parse_rooms(lines):
     rooms = []
     for line in lines:
@@ -36,8 +35,7 @@ flatten_rooms_list = flatten_rooms_list(rooms)
 print(f'Flatten rooms list: {flatten_rooms_list}')
 
 
-# TODO: We need to parses the chair types on the floor plan
-
+# //We need to parses the chair types on the floor plan
 def parse_chairs(lines):
     chair_types = [
         'S',
@@ -54,8 +52,9 @@ def parse_chairs(lines):
 parse_chairs = parse_chairs(lines)
 # print(parse_chairs)
 
-# // Number of different chair types for the apartment
 
+# // First part of the solution:
+#1. Number of different chair types for the apartment
 def total_chair_count(lines):
     c_count, w_count,p_count, s_count = [], [], [], []
     for i in range(len(lines)):
@@ -74,32 +73,37 @@ total_chairs = chairs['C'] + chairs['P'] + chairs['S'] + chairs['W']
 print(f'Total number of chairs: {total_chairs}')
 print(f'Total chair counts every kind in the apartment.: {chairs}')
 
-
-# #### Trying to fine the pattern from the floor plan design by using regex horizontal boundary and vertical boundary: 
+# //  Second part of the solution approach
+# // Trying to fine the pattern from the floor plan design by using regex horizontal boundary and vertical boundary: 
 # '|', '/', or '\'
 # '+' until next with number of '-' inbetween+'
-
-def parse_horizontal_boundary(line):
+def Parse_boundary(lines):
+    """ 
+    this regex can capture everythink '^.*$' 
     """
-    spitting the lines with pattern for + until next + (not sure this will work)
-    """
-    horizontal_line_boundary = '\+(-*)\+'
-    print(re.findall(horizontal_line_boundary, line))
 
-for line in lines:
-    parse_horizontal_boundary(line)
+    def parse_horizontal_boundary(line):
+        """
+        spitting the lines with pattern for + until next + (not sure this will work)
+        """
+        horizontal_line_boundary = '\+(-*)\+'
+        horizontal_boundary = re.findall(horizontal_line_boundary, line)
+        print(horizontal_boundary)
 
-# vertical boundary
+    def parse_vertical_boundary(line):
+        """
+        splitting the lines with '|', '/', or '\' and horizontal lines '+' to next '+' does not follow same pattern
+        """
+        vertical_line_boundary = '\|(.*)\|'
+        vertical_boundary = re.findall(vertical_line_boundary, line)
+        print(vertical_boundary)
 
-def parse_vertical_boundary(line):
-    """
-    splitting the lines with '|', '/', or '\' or if + does not follow -
-    """
-    vertical_line_boundary = '\|(.*)\|'
-    print(re.findall(vertical_line_boundary, line))
+    for line in lines:
+        parse_vertical_boundary(line)
+        parse_horizontal_boundary(line)
 
-for line in lines:
-    parse_vertical_boundary(line)
+Parse_boundary = Parse_boundary(lines)
+print(Parse_boundary)
 
 
 # TODO: Logic
@@ -112,3 +116,12 @@ If lin
 s
 If line
 """
+def extract_rooms(lines):
+    global flatten_rooms_list
+    global Parse_boundary
+    office, bathroom, kitchen, bedroom, hallway, balcony = [],[],[],[],[],[]
+    for i in flatten_rooms_list:
+        line.split('|')
+        line.split(' ')
+        line.split('\+')
+        pass
