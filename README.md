@@ -1,5 +1,3 @@
-# Brady_techinical_task
-
 # First solution approach 
 1. we read the file.
 2. Extract the room names and removed all the empty and flatter the final room list.
