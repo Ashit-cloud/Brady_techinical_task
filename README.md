@@ -1,4 +1,4 @@
-# First solution approach 
+## First solution approach 
 1. we read the file.
 2. Extract the room names and removed all the empty and flatter the final room list.
 3. Extract the area where chairs are available.
@@ -11,11 +11,11 @@
    -finlay, once we got the each room separately. easily we can count the each type of in the each room.
    
    
-# challenges
+## Challenges
 1. Although we can able to find the pattern by using regex, but the apartment design and each room design structure is quit different, so we are unable to capture the design properly.
 2. since the design in txt file. and we can read only line by line, hence its hard extract each lines room information.
 3. Any how if we can get the information of each room and each types of chairs in the room. if the design has changed this solution might not work.
 hence , we need to build a robust solution.
 
-# Alternative solution approach
+## Alternative solution approach
 1. Apart of this approach we might solve this problem converting .txt into image by using CNN technique  like Open-cv or other technique. 
