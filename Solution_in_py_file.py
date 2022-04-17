@@ -124,5 +124,4 @@ def extract_rooms(lines):
         line.split('|')
         line.split(' ')
         line.split('\+')
-
         pass
