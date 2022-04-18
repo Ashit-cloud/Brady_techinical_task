@@ -119,9 +119,14 @@ If line
 def extract_rooms(lines):
     global flatten_rooms_list
     global Parse_boundary
+    
+    """ while search the room name in the lines , once room name found we will try get the pattern for the room using 
+    the parse_boundaries function ( not sure if this will work)
+    """
     office, bathroom, kitchen, bedroom, hallway, balcony = [],[],[],[],[],[]
-    for i in flatten_rooms_list:
+    for line in lines:
         line.split('|')
         line.split(' ')
         line.split('\+')
         pass
+
